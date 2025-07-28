@@ -36,7 +36,15 @@ hr{
     font-size: 10em;
     font-weight: 700;
 }
+.quick-break{
+    font-size: 10em;
+    font-weight: 700;
+}
 .button-wrapper{
+    display: flex;
+    gap: 1em;
+}
+.time-buttons{
     display: flex;
     gap: 1em;
 }
@@ -63,6 +71,13 @@ button:hover{
 #restart{
     background-color:rgb(142, 85, 43) ;
 }
+#quick-break-btn {
+    background-color:rgb(142, 85, 43) ;
+}
+#study-btn{
+    background-color:rgb(142, 85, 43) ;
+}
+  
   
 
 
