@@ -111,3 +111,4 @@ restart.addEventListener("click", resetTimer);
 // Initialize default mode on page load
 setMode("study");
 
+
