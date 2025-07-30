@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head> 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pomodoro Timer</title>
-  <link rel="stylesheet" href="index.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pompomdoro Timer</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  
+ <div class="header-container">
+  <div class="header">
+    <h1 class="title">Pompomdoro Timer</h1>
+    <div class="header-buttons">
+      <button id="report-btn">Report</button>
+      <button id="settings-btn">Settings</button>
+      <button id="signin-btn">Sign In</button>
+    </div>
+  </div>
+  <hr class="header-hr">
+</div>
+
 
   <div class="container">
-    <h1 class="title">Pomodoro Timer</h1>
-    <hr>
+    <div class="beret"></div>
 
-    <p class="timer" id="timer">25:00</p>
-    <p class="quick-break" id="quick-break" style="display:none;">05:00</p>
-
-    <div class="button-wrapper">
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
-      <button id="restart">Restart</button>
+     <!-- Mode buttons -->
+    <div class="time-buttons">
+      <button id="study-btn">Study</button>
+      <button id="quick-break-btn">Quick Break</button>
+      <button id="long-break-btn">Long Break</button>
     </div>
 
-    <div class="time-buttons">
-      <button id="study-btn">Study Button</button>
-      <button id="quick-break-btn">Quick Break</button>
+    <!-- Timer display -->
+    <p class="timer-display" id="timer">25:00</p>
+    <p class="timer-display" id="quick-break" style="display:none;">05:00</p>
+    <p class="timer-display" id="long-break" style="display:none;">15:00</p>
+
+    <!-- Toggle and restart -->
+    <div class="button-wrapper">
+      <button id="toggle-timer">Start</button>
+      <button id="restart">Restart</button>
     </div>
   </div>
 
