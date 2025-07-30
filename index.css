@@ -28,9 +28,18 @@ body {
 
 
 .title {
+  font-family: 'Baloo 2', cursive;
   font-size: 3em !important;
   color: rgb(166, 92, 24);
+  font-weight: 900;
 }
+
+.title:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
 
 .header-buttons {
   display: flex;
@@ -38,6 +47,7 @@ body {
 }
 
 .header-buttons button {
+  font-family: 'Baloo 2', cursive;
   font-size: 1em;
   font-weight: 700;
   padding: 0.3em 1em;
@@ -47,6 +57,7 @@ body {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: bold;
 }
 
 .header-buttons button:hover {
@@ -68,7 +79,12 @@ body {
   padding: 4em 3em;
   transform: scale(0.6); /* scale down 40% */
   transform-origin: center;
+  position: relative; /* enable positioning for the hat */
+  
+  /* ✨ Add this for the shadow effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.50);
 }
+
 .container {
   position: relative; /* enable positioning for the hat */
 }
@@ -104,6 +120,7 @@ body {
 }
 
 .timer-display {
+  font-family: 'Baloo 2', cursive;
   font-size: 10em;
   font-weight: 700;
   text-align: center;
@@ -120,6 +137,7 @@ body {
 }
 
 button {
+  font-family: 'Baloo 2', cursive;
   font-size: 2em;
   font-weight: 800;
   letter-spacing: 1px;
@@ -155,6 +173,42 @@ button.active {
 }
 
 
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0; /* We'll do spacing with wrappers now */
+}
+
+/* Mascot container spacing */
+.mascot-wrapper.left {
+  margin-right: 60px; /* move left mascot away from title */
+}
+
+.mascot-wrapper.right {
+  margin-left: 60px; /* move right mascot away from title */
+}
+
+/* Mascot image itself */
+.mascot {
+  height: 3em;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+
+.title-wrapper:hover .mascot {
+  animation: wiggle 0.6s infinite ease-in-out;
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-5deg); }
+  50%  { transform: rotate(5deg); }
+  75%  { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
 
   
   
