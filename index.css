@@ -1,82 +1,172 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Arial";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
-body{
-    min-height: 100vh;
-    background: rgba(240,220,185,255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+body {
+  min-height: 100vh;
+  background: rgb(254, 252, 172);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
-    color:rgb(142, 85, 43);
-    background-color: rgba(255, 255, 255, 0.20);
-    border-radius: 2em;
-    padding: 4em 3em;
-}  
-.title{
-    font-size: 3em;
+
+.header {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1vh;
+  padding: 0 1em;
+  display: flex;
+  justify-content: center; /* center both title and buttons */
+  align-items: center;
+  gap: 2em; /* space between title and buttons */
+  box-sizing: border-box;
 }
-hr{
-    width: 100%;
-    background-color: rgb(142, 85, 43);
-    height: 5px;
-    border-radius: 1em;
-    border: none;
+
+
+.title {
+  font-size: 1.5em !important;
+  color: rgb(166, 92, 24);
 }
-.timer{
-    font-size: 10em;
-    font-weight: 700;
+
+.header-buttons {
+  display: flex;
+  gap: 1em;
 }
-.quick-break{
-    font-size: 10em;
-    font-weight: 700;
+
+.header-buttons button {
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.3em 1em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgb(166, 92, 24);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.button-wrapper{
-    display: flex;
-    gap: 1em;
+
+.header-buttons button:hover {
+  background-color: rgb(190, 110, 50);
+  transform: translateY(-2px);
 }
-.time-buttons{
-    display: flex;
-    gap: 1em;
+
+hr {
+  position: fixed;
+  top: 60px; /* adjust depending on header height */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: rgba(166, 92, 24, 0.85);
+  border: none;
+  z-index: 9;
 }
-button{
-    font-size: 2em;
-    font-weight: 800;
-    letter-spacing: 1px;
-    padding: 0.5em 1.5em;
-    border-radius: 0.5em;
-    border: none;
-    color: rgba(240,220,185,255);
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+
+
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  color: rgb(255, 255, 255);
+  background-color: rgb(166, 92, 24);
+  border-radius: 2em;
+  padding: 4em 3em;
+  transform: scale(0.6); /* scale down 40% */
+  transform-origin: center;
 }
-button:hover{
-    transform: translateY(-10px);
+.container {
+  position: relative; /* enable positioning for the hat */
 }
-#start{
-    background-color:rgb(142, 85, 43) ;
+
+.beret {
+  position: absolute;
+  top: -30px;   /* adjust vertical placement */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 40px;
+  background-color: #6a4e23;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+  pointer-events: none;
+  z-index: 10;
 }
-#stop{
-    background-color:rgb(142, 85, 43) ;
+
+.beret::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #f1c40f;
+  border-radius: 50%;
 }
-#restart{
-    background-color:rgb(142, 85, 43) ;
+
+.title {
+  font-size: 3em;
 }
-#quick-break-btn {
-    background-color:rgb(142, 85, 43) ;
+
+.timer-display {
+  font-size: 10em;
+  font-weight: 700;
+  text-align: center;
 }
-#study-btn{
-    background-color:rgb(142, 85, 43) ;
+
+.button-wrapper {
+  display: flex;
+  gap: 1em;
 }
+
+.time-buttons {
+  display: flex;
+  gap: 1em;
+}
+
+button {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.20);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: rgb(190, 110, 50);
+  transform: translateY(-5px);
+}
+
+button:active {
+  background-color: rgba(255, 255, 255, 0.30);
+}
+
+button.active {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+#toggle-timer,
+#stop,
+#restart,
+#study-btn,
+#quick-break-btn,
+#long-break-btn {
+  background-color: rgb(166, 92, 24);
+}
+
   
 
 
